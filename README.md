@@ -1,3 +1,5 @@
+(None of the below description was written nor proofread by human. MIT License)
+
 # The Ferris & Sweep Family Tree
 
 An interactive, scrollable genealogy of split keyboards descended from Pierre Chevalier's **Ferris** and David Philip Barr's **Sweep**.
