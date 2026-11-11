@@ -1,0 +1,1368 @@
+{
+  "meta": {
+    "title": "The Ferris & Sweep Family Tree",
+    "subtitle": "A field guide to the 34-key split keyboard diaspora",
+    "updated": "2026-11-11",
+    "description": "A curated genealogy of open-source split keyboards descended from Pierre Chevalier's Ferris and David Barr's Sweep. Each edge records the design change that created a new branch.",
+    "scope": "Curated, not exhaustive. Lineage is taken from project READMEs, credits and product pages; inspired branches are attribution, not code forks.",
+    "repo": "https://github.com/pierrechevalier83/ferris"
+  },
+  "branches": {
+    "ferris": {
+      "label": "Ferris core",
+      "color": "#b7791f"
+    },
+    "sweep": {
+      "label": "Sweep core",
+      "color": "#0f766e"
+    },
+    "variant": {
+      "label": "Sweep variant",
+      "color": "#4d7c0f"
+    },
+    "wireless": {
+      "label": "Wireless offshoot",
+      "color": "#2563eb"
+    },
+    "layout": {
+      "label": "Layout experiment",
+      "color": "#7c3aed"
+    },
+    "remix": {
+      "label": "Remix",
+      "color": "#d1495b"
+    }
+  },
+  "tags": {
+    "30k": "30 keys",
+    "34k": "34 keys",
+    "36k": "36 keys",
+    "40k": "40 keys",
+    "42k": "42 keys",
+    "wireless": "Wireless",
+    "wired": "Wired",
+    "choc": "Choc",
+    "mx": "MX",
+    "multi": "Multi-switch",
+    "hotswap": "Hotswap",
+    "display": "Display",
+    "encoder": "Encoder",
+    "trackpad": "Trackpad",
+    "rgb": "RGB",
+    "splay": "Splay",
+    "stagger": "Column stagger",
+    "ortho": "Ortholinear",
+    "unibody": "Unibody",
+    "diodeless": "Diodeless",
+    "reversible": "Reversible PCB",
+    "solar": "Solar",
+    "chocmini": "Choc mini",
+    "ulp": "Cherry ULP",
+    "alps": "Alps"
+  },
+  "filters": [
+    {
+      "id": "keys-30",
+      "label": "30 keys",
+      "tags": [
+        "30k"
+      ]
+    },
+    {
+      "id": "keys-34",
+      "label": "34 keys",
+      "tags": [
+        "34k"
+      ]
+    },
+    {
+      "id": "keys-wide",
+      "label": "36–42 keys",
+      "tags": [
+        "36k",
+        "40k",
+        "42k"
+      ]
+    },
+    {
+      "id": "wireless",
+      "label": "Wireless",
+      "tags": [
+        "wireless"
+      ]
+    },
+    {
+      "id": "wired",
+      "label": "Wired",
+      "tags": [
+        "wired"
+      ]
+    },
+    {
+      "id": "choc",
+      "label": "Choc",
+      "tags": [
+        "choc"
+      ]
+    },
+    {
+      "id": "mx",
+      "label": "MX",
+      "tags": [
+        "mx"
+      ]
+    },
+    {
+      "id": "splay",
+      "label": "Splay",
+      "tags": [
+        "splay"
+      ]
+    },
+    {
+      "id": "display",
+      "label": "Display / trackpad",
+      "tags": [
+        "display",
+        "trackpad"
+      ]
+    },
+    {
+      "id": "hotswap",
+      "label": "Hotswap",
+      "tags": [
+        "hotswap"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ferris-01",
+      "name": "Ferris 0.1",
+      "maker": "Pierre Chevalier",
+      "year": "2020",
+      "branch": "ferris",
+      "order": 0,
+      "root": true,
+      "summary": "The original minimal 34-key split: a Kyria layout cut down to three rows of five columns plus two thumb keys per hand. Low-profile, wired, and deliberately feature-light.",
+      "delta": "Starting point: 34 keys, Kyria-derived stagger, onboard MCU.",
+      "changes": [
+        "34 keys per board: 3×5 columns plus 2 thumb keys on each half.",
+        "Kyria-derived column stagger with an aggressive pinky column; no finger splay.",
+        "Onboard ATmega32U4 and MCP23017 I/O expander, USB-C, TRRS link between halves.",
+        "SOD-123 diodes in the switch matrix; no hotswap, OLED, encoder or RGB.",
+        "Four launch variants: base Choc/MX spacing, Low Choc mini, High MX, Compact Choc spacing."
+      ],
+      "tags": [
+        "34k",
+        "wired",
+        "choc",
+        "mx",
+        "chocmini",
+        "stagger"
+      ],
+      "evidence": "Ferris 0.1 Base README calls this 'the first ever iteration' with 'the same layout as the Kyria (but limited to 34 keys)'. The design notes describe SOD-123 matrix diodes and an onboard ATmega32U4.",
+      "source": {
+        "label": "GitHub · Ferris 0.1",
+        "url": "https://github.com/pierrechevalier83/ferris/tree/main/0.1"
+      }
+    },
+    {
+      "id": "ferris-02",
+      "name": "Ferris 0.2",
+      "maker": "Pierre Chevalier",
+      "year": "2021",
+      "branch": "ferris",
+      "order": 10,
+      "summary": "The second-generation Ferris moves to an ARM MCU, adds ESD protection, and introduces the feature-packed Bling variant while keeping the same 34-key geometry.",
+      "delta": "ARM MCU + ESD; Bling adds RGB, case mounts and tenting.",
+      "changes": [
+        "STM32F072 replaces the ATmega32U4 on the left half.",
+        "ESD protection added around the controller and USB-C.",
+        "Bling variant adds RGB underglow, case mounting holes and tenting-puck support.",
+        "Still wired over TRRS; right half uses an MCP23017 I/O expander.",
+        "Four variants: Bling, Compact, High and Mini."
+      ],
+      "tags": [
+        "34k",
+        "wired",
+        "choc",
+        "mx",
+        "chocmini",
+        "stagger",
+        "rgb"
+      ],
+      "evidence": "Ferris 0.2 README: 'The left hand uses an arm chip (STM32F072) as well as components to protect the board against electrostatic discharge.' The Bling README lists RGB underglow, case support and tenting.",
+      "source": {
+        "label": "GitHub · Ferris 0.2",
+        "url": "https://github.com/pierrechevalier83/ferris/tree/main/0.2"
+      }
+    },
+    {
+      "id": "cantor",
+      "name": "Cantor",
+      "maker": "diepala",
+      "year": "2022",
+      "branch": "layout",
+      "order": 30,
+      "summary": "A wider 42-key interpretation that blends Corne, Ferris and Sweep ideas. It adds a sixth column and third thumb key, with a stronger column stagger and a diodeless reversible PCB.",
+      "delta": "42 keys + stronger stagger + diodeless + Blackpill.",
+      "changes": [
+        "42 keys: 3×6 columns plus 3 thumb keys per half.",
+        "Stronger column stagger than Corne for better finger reach.",
+        "Diodeless matrix and reversible PCB.",
+        "STM32F401 Blackpill controller; wired TRRS connection.",
+        "Two versions: Cantor Classic (Choc spacing) and Cantor MX (MX spacing, multi-switch).",
+        "Designed for cheap, simple assembly."
+      ],
+      "tags": [
+        "42k",
+        "wired",
+        "choc",
+        "mx",
+        "multi",
+        "stagger",
+        "diodeless",
+        "reversible"
+      ],
+      "evidence": "Cantor README: '42 key diodeless split keyboard ... inspired on the popular corne, ferris and sweep keyboards', with a stronger column stagger, a reversible PCB and a Blackpill controller.",
+      "source": {
+        "label": "GitHub · Cantor",
+        "url": "https://github.com/diepala/cantor"
+      }
+    },
+    {
+      "id": "eobard",
+      "name": "Eobard",
+      "maker": "primevivian",
+      "year": "2024",
+      "branch": "layout",
+      "order": 40,
+      "summary": "An ortholinear 34-key Ferris reinterpretation with the columns spaced vertically for the designer's hand size. Raspberry Pi Pico, MX switches, wired and reversible.",
+      "delta": "Ortholinear grid + Pi Pico + MX + reversible.",
+      "changes": [
+        "Ortholinear 34-key grid instead of Ferris column stagger.",
+        "Columns spaced vertically to suit the designer's hand size.",
+        "Raspberry Pi Pico controllers.",
+        "MX switches and a reversible single PCB.",
+        "Wired TRRS link; diode and diodeless firmware variants.",
+        "Designed for cheap manufacture and simple assembly."
+      ],
+      "tags": [
+        "34k",
+        "wired",
+        "mx",
+        "ortho",
+        "diodeless",
+        "reversible"
+      ],
+      "evidence": "Eobard README: 'ortholinear 34 key split keyboard ... Inspired by the Ferris. The columns are spaced out vertically so as to provide the most comfortable typing experience for my hand size.' The BOM lists two Raspberry Pi Pico boards.",
+      "source": {
+        "label": "GitHub · Eobard",
+        "url": "https://github.com/primevivian/eobard"
+      }
+    },
+    {
+      "id": "sweep",
+      "name": "Sweep",
+      "alias": "Ferris Sweep",
+      "maker": "David Philip Barr",
+      "year": "2021",
+      "branch": "sweep",
+      "order": 20,
+      "summary": "The pivotal remix: Ferris geometry and a Pro Micro/nice!nano daughterboard instead of onboard electronics. Diodeless, cheap to build, and the gateway to wireless Ferris builds.",
+      "delta": "Daughterboard + diodeless matrix + nice!nano wireless option.",
+      "changes": [
+        "Onboard MCU replaced by a Pro Micro / Elite-C / Bit-C / nice!nano daughterboard.",
+        "Diodeless direct-pin matrix: the components list needs no diodes.",
+        "nice!nano turns the same PCB into a Bluetooth keyboard; TRRS remains for wired builds.",
+        "Keeps the 34-key 3×5+2 Ferris layout and column stagger.",
+        "Controller is socketed and replaceable; builds are cheaper and easier to repair.",
+        "Original design is not reversible; later variants add one-PCB options."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "wired",
+        "choc",
+        "diodeless",
+        "stagger"
+      ],
+      "evidence": "Sweep README: 'a version of the more fabulous Ferris ... that uses a daughter board like a promicro, elite-c, bit-c, nice!nano etc. instead of using onboard components.' The parts list omits diodes; sellers describe the PCB as diode-less.",
+      "source": {
+        "label": "GitHub · Sweep",
+        "url": "https://github.com/davidphilipbarr/Sweep"
+      }
+    },
+    {
+      "id": "sweep-2",
+      "name": "Sweep 2.2",
+      "maker": "David Philip Barr",
+      "year": "2022",
+      "branch": "sweep",
+      "order": 210,
+      "summary": "The recommended Choc v1 Sweep. A refined daily-driver PCB with a power switch, tenting support and optional Mill-Max hotswap sockets.",
+      "delta": "Refined Choc daily driver: power switch + tenting + Mill-Max.",
+      "changes": [
+        "Choc v1 switches with tight Choc spacing.",
+        "On/off switch added for wireless builds.",
+        "Tenting-puck support and case-friendly layout.",
+        "Optional Mill-Max hotswap sockets instead of soldered switches.",
+        "Still 34 keys, diodeless, and Pro Micro/nice!nano compatible."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "wired",
+        "choc",
+        "diodeless",
+        "stagger",
+        "hotswap"
+      ],
+      "evidence": "Official Sweep README: 'Sweep 2 - Recommended Choc v1 board with all the features.' Its comparison table lists the on/off switch, Choc spacing, tenting support and optional Mill-Max.",
+      "source": {
+        "label": "GitHub · Sweep 2.2",
+        "url": "https://github.com/davidphilipbarr/Sweep/tree/main/Sweep%20v2.2"
+      }
+    },
+    {
+      "id": "half-swept",
+      "name": "Sweep Half Swept",
+      "maker": "David Philip Barr",
+      "year": "2022",
+      "branch": "variant",
+      "order": 211,
+      "summary": "Same electronics and 34-key layout as Sweep 2, but with a reversible Pro Micro footprint so one PCB design serves both hands.",
+      "delta": "Reversible Pro Micro footprint: one PCB for both hands.",
+      "changes": [
+        "Reversible Pro Micro footprint; buy one PCB design instead of separate left/right boards.",
+        "Same 34-key Choc-spaced Sweep 2 layout.",
+        "Optional Mill-Max hotswap sockets.",
+        "On/off switch and tenting support retained."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "wired",
+        "choc",
+        "diodeless",
+        "stagger",
+        "hotswap",
+        "reversible"
+      ],
+      "evidence": "Official Sweep README: 'Same as Sweep 2, but with a reversible pro-micro footprint.' The folder README calls it 'Half of a Sweep2 with a reversible micro-controller footprint.'",
+      "source": {
+        "label": "GitHub · Sweep Half Swept",
+        "url": "https://github.com/davidphilipbarr/Sweep/tree/main/Sweep%20half-swept"
+      }
+    },
+    {
+      "id": "sweep-cat",
+      "name": "Sweep Cat",
+      "maker": "smallwat3r",
+      "year": "2024",
+      "branch": "remix",
+      "order": 212,
+      "summary": "A 30-key Sweep 2.2 remix with cat art. Version 2 splays the two outermost columns for a more natural pinky and ring finger reach.",
+      "delta": "30 keys + 8°/3° outer-column splay.",
+      "changes": [
+        "Key count reduced from 34 to 30.",
+        "Pinky column splayed 8° and ring column 3° in v2.",
+        "Based on the Sweep 2.2 PCB and Choc ecosystem.",
+        "Cat illustration on the PCB because, presumably, Lila demanded it."
+      ],
+      "tags": [
+        "30k",
+        "choc",
+        "splay",
+        "stagger"
+      ],
+      "evidence": "Sweep Cat README: 'A 30-key version of the fantastic Sweep 2.2.' The v2 notes add 8° pinky splay and 3° ring-finger splay.",
+      "source": {
+        "label": "GitHub · Sweep Cat",
+        "url": "https://github.com/smallwat3r/sweep-cat"
+      }
+    },
+    {
+      "id": "bling-lp",
+      "name": "Sweep Bling LP",
+      "maker": "David Philip Barr",
+      "year": "2021",
+      "branch": "variant",
+      "order": 220,
+      "summary": "The Choc hotswap Sweep: Choc v1 only, Kailh hotswap sockets required, with the on/off switch and tenting support of the Sweep 2 line.",
+      "delta": "Choc-only + Kailh hotswap sockets.",
+      "changes": [
+        "Choc v1 switches only.",
+        "Kailh hotswap sockets required, no soldered switch option.",
+        "Choc spacing for a tighter, lower board.",
+        "On/off switch and tenting-puck support."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "wired",
+        "choc",
+        "diodeless",
+        "stagger",
+        "hotswap"
+      ],
+      "evidence": "Official Sweep README: 'A Choc v1 only Sweep that features Kailh's hotswap sockets.' The feature table lists Choc spacing, on/off switch, tenting and Kailh hotswap.",
+      "source": {
+        "label": "GitHub · Sweep Bling LP",
+        "url": "https://github.com/davidphilipbarr/Sweep/tree/main/Sweep%20Bling%20LP"
+      }
+    },
+    {
+      "id": "bling-mx",
+      "name": "Sweep Bling MX",
+      "maker": "David Philip Barr",
+      "year": "2021",
+      "branch": "variant",
+      "order": 230,
+      "summary": "The MX hotswap Sweep, with a reversible PCB and a stacked plate case. This is the base for splitkb's Aurora Sweep.",
+      "delta": "MX-only + hotswap + reversible PCB + stacked case.",
+      "changes": [
+        "MX switches only, with Kailh hotswap sockets required.",
+        "Reversible PCB design.",
+        "MX spacing rather than Choc spacing.",
+        "Stacked switch plate and bottom plate for a case.",
+        "On/off switch and tenting support."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "wired",
+        "mx",
+        "stagger",
+        "hotswap",
+        "reversible"
+      ],
+      "evidence": "Official Sweep README: 'An MX only Sweep that features Kailh's hotswap sockets and a stacked case.' The folder README adds MX-only support, hotswap, tenting and mounting holes for the stacked case.",
+      "source": {
+        "label": "GitHub · Sweep Bling MX",
+        "url": "https://github.com/davidphilipbarr/Sweep/tree/main/Sweep%20Bling%20MX"
+      }
+    },
+    {
+      "id": "aurora-sweep",
+      "name": "Aurora Sweep",
+      "maker": "splitkb.com",
+      "year": "2022",
+      "branch": "remix",
+      "order": 231,
+      "summary": "splitkb's commercial redesign of Sweep Bling MX. It keeps the 34-key layout but adds MX spacing everywhere, OLEDs, encoders, RGB and a polished kit ecosystem.",
+      "delta": "Commercial kit: MX spacing + OLEDs + encoders + RGB.",
+      "changes": [
+        "Redesign of the Sweep Bling MX with MX spacing on every variant.",
+        "Supports MX or Kailh Choc v1, hotswap or hand-solder.",
+        "Up to two 128×32 OLED displays and two EC11 encoders per half.",
+        "Per-key RGB backlight plus underglow.",
+        "QMK or ZMK; power switch and tenting-puck support.",
+        "Sold as a complete PCB kit with case options."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "wired",
+        "choc",
+        "mx",
+        "stagger",
+        "hotswap",
+        "display",
+        "encoder",
+        "rgb"
+      ],
+      "evidence": "splitkb: 'The Aurora Sweep is a redesign by splitkb.com of the popular Sweep (Sweep Bling MX).' The product page lists 34 keys, MX spacing, dual OLEDs, dual encoders, per-key RGB and underglow.",
+      "source": {
+        "label": "splitkb · Aurora Sweep",
+        "url": "https://splitkb.com/products/aurora-sweep"
+      }
+    },
+    {
+      "id": "high",
+      "name": "Sweep High",
+      "maker": "David Philip Barr",
+      "year": "2021",
+      "branch": "variant",
+      "order": 240,
+      "summary": "A multi-switch Sweep that trades Choc spacing for MX spacing, widening keycap and switch compatibility while staying 34 keys.",
+      "delta": "MX spacing + Choc v1/v2, MX and Alps compatibility.",
+      "changes": [
+        "MX spacing replaces tight Choc spacing.",
+        "Supports Choc v1, Choc v2, MX and Alps switches.",
+        "No hotswap; switches are soldered.",
+        "On/off switch and tenting support retained."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "wired",
+        "choc",
+        "mx",
+        "multi",
+        "alps",
+        "stagger"
+      ],
+      "evidence": "Official Sweep README: 'Same as the Sweep 2, but trades choc spacing for compatibility with more switches and keycaps.' The table lists Choc v1/v2, MX and Alps support.",
+      "source": {
+        "label": "GitHub · Sweep High",
+        "url": "https://github.com/davidphilipbarr/Sweep/tree/main/Sweep%20High"
+      }
+    },
+    {
+      "id": "high-m",
+      "name": "Sweep High M",
+      "maker": "David Philip Barr",
+      "year": "2022",
+      "branch": "variant",
+      "order": 250,
+      "summary": "The soldered MX-only member of the High family, adding a reversible PCB to the wider MX-spaced layout.",
+      "delta": "MX-only + soldered + reversible PCB.",
+      "changes": [
+        "MX switches only, soldered rather than hotswap.",
+        "Reversible PCB design.",
+        "MX spacing for standard keycaps.",
+        "On/off switch and tenting support."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "wired",
+        "mx",
+        "stagger",
+        "reversible"
+      ],
+      "evidence": "Official Sweep README: 'A soldered MX only Sweep, with a reversible PCB design.' The feature table confirms MX spacing and tenting.",
+      "source": {
+        "label": "GitHub · Sweep High M",
+        "url": "https://github.com/davidphilipbarr/Sweep/tree/main/Sweep%20High%20M"
+      }
+    },
+    {
+      "id": "mini",
+      "name": "Sweep Mini",
+      "maker": "David Philip Barr",
+      "year": "2021",
+      "branch": "variant",
+      "order": 260,
+      "summary": "The Choc mini experiment: the lowest-profile Sweep, using uncommon PG1232 switches and a reversible PCB.",
+      "delta": "Choc mini switches + reversible PCB.",
+      "changes": [
+        "Kailh Choc mini (PG1232) switches for an even lower build.",
+        "Choc spacing keeps the footprint compact.",
+        "Reversible PCB design.",
+        "No on/off switch in the official feature table.",
+        "No hotswap sockets."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "wired",
+        "chocmini",
+        "stagger",
+        "reversible"
+      ],
+      "evidence": "Official Sweep README: 'The only version that supports Choc minis.' The table lists Choc mini support, Choc spacing, no on/off switch, and a reversible PCB.",
+      "source": {
+        "label": "GitHub · Sweep Mini",
+        "url": "https://github.com/davidphilipbarr/Sweep/tree/main/Sweep%20Mini"
+      }
+    },
+    {
+      "id": "swoop",
+      "name": "Swoop",
+      "maker": "jimmerricks",
+      "year": "2021",
+      "branch": "wireless",
+      "order": 270,
+      "summary": "A feature-rich fork of Sweep for MX builds: hotswap, per-key RGB, OLEDs, encoders and Bluetooth, all in a plate-style case.",
+      "delta": "MX + hotswap + RGB + OLEDs + encoders.",
+      "changes": [
+        "Fork of the Sweep, supporting 34–36 MX switches.",
+        "Kailh hotswap sockets and per-key SK6812 Mini-E RGB LEDs.",
+        "Up to two EC11 encoders and two OLED displays.",
+        "Bluetooth via nice!nano; TRRS wired option.",
+        "Plate-style case with MCU cover; QMK firmware."
+      ],
+      "tags": [
+        "34k",
+        "36k",
+        "wireless",
+        "wired",
+        "mx",
+        "stagger",
+        "hotswap",
+        "display",
+        "encoder",
+        "rgb"
+      ],
+      "evidence": "Swoop README: 'A WIP fork of David Barr's Sweep.' The feature list includes MX, hotswap, per-key RGB, up to two encoders, OLEDs and Bluetooth support with nice!nano.",
+      "source": {
+        "label": "GitHub · Swoop",
+        "url": "https://github.com/jimmerricks/swoop"
+      }
+    },
+    {
+      "id": "swweeep",
+      "name": "swweeep",
+      "maker": "Sadek Baroudi",
+      "year": "2022",
+      "branch": "wireless",
+      "order": 275,
+      "summary": "The wireless-only 36-key member of the sweep36 family. It keeps the diodeless Sweep matrix, adds a nice!view, and removes wired TRRS to fit the nice!nano pin budget.",
+      "delta": "36 keys + wireless-only + nice!view + hotswap.",
+      "changes": [
+        "36 keys while keeping the original diodeless Sweep matrix.",
+        "nice!nano required; wireless only with no TRRS connection.",
+        "nice!view display support.",
+        "On/off switch and JST-spaced battery through-holes.",
+        "Kailh hotswap and Mill-Max compatible through-hole sockets."
+      ],
+      "tags": [
+        "36k",
+        "wireless",
+        "choc",
+        "diodeless",
+        "hotswap",
+        "display",
+        "stagger"
+      ],
+      "evidence": "sweep36 README: 'A 36 key version of the sweep, maintaining the original diodeless pcb.' The swweeep section lists 'nice!nano required', 'nice!view support', 'wireless only (no TRRS)', an on/off switch, and hotswap/Mill-Max compatibility.",
+      "source": {
+        "label": "GitHub · sweep36 / swweeep",
+        "url": "https://github.com/sadekbaroudi/sweep36/tree/master/swweeep"
+      }
+    },
+    {
+      "id": "sweep-squared-rot",
+      "name": "Sweep Squared Rotated",
+      "alias": "Sweep Squared",
+      "maker": "ezxzeng",
+      "year": "2023",
+      "branch": "layout",
+      "order": 276,
+      "summary": "A 36-key 5×3+3 Sweep derivative with the thumb cluster rotated for extra clearance inside a 100×100 mm PCB. It is Ergogen-generated, reversible, diodeless, and supports wired or wireless builds.",
+      "delta": "Rotated thumb cluster + 100 mm PCB + reversible multi-switch.",
+      "changes": [
+        "36 keys: 5×3 columns plus 3 thumb keys per half.",
+        "Rotated/repositioned thumb cluster for more room and length while fitting a 100×100 mm PCB.",
+        "Reversible footprint with MX, Choc or Gateron low-profile socket options.",
+        "Diodeless design; wired or wireless with a TRRS/inner-thumb toggle.",
+        "Same key routing as the swweeep; autogenerated with Ergogen.",
+        "JST battery connector and 7-pin slider switch."
+      ],
+      "tags": [
+        "36k",
+        "wireless",
+        "wired",
+        "choc",
+        "mx",
+        "multi",
+        "hotswap",
+        "diodeless",
+        "reversible",
+        "stagger"
+      ],
+      "evidence": "Sweep Squared README: 'A 5x3 split keyboard with 3 thumb keys' and 'sweeps can be rotated for more room and length between the thumb cluster and rest of the keys'. Features include a 100×100 mm PCB, reversible footprint, diodeless wired/wireless operation, and 'Same key routing as the swweeep'.",
+      "source": {
+        "label": "GitHub · Sweep Squared Rotated",
+        "url": "https://github.com/ezxzeng/sweep_squared_rot"
+      }
+    },
+    {
+      "id": "urchin",
+      "name": "Urchin",
+      "maker": "Duccio (duckyb)",
+      "year": "2022",
+      "branch": "wireless",
+      "order": 280,
+      "summary": "A wireless-only Sweep redesign built around nice!view displays and Choc hotswap. It borrows Swoop's outline and switches to a diode matrix so the firmware can support screens.",
+      "delta": "Wireless-only + nice!view + Choc hotswap + diode matrix.",
+      "changes": [
+        "Strictly wireless-only design for nice!nano and ZMK.",
+        "Native nice!view display support.",
+        "Kailh Choc v1 hotswap sockets.",
+        "Switch matrix with diodes, so firmware is not interchangeable with Sweep.",
+        "New outline borrowed from Swoop, plus case and plate support.",
+        "Familiar 34-key Ferris/Sweep layout."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "choc",
+        "stagger",
+        "hotswap",
+        "display"
+      ],
+      "evidence": "Urchin README: created to 'upgrade my Sweep with the fancy nice!view displays'; it uses Swoop's edge design, adds a diode matrix, and is 'strictly wireless-only'. It lists a 'Familiar Ferris/Sweep layout'.",
+      "source": {
+        "label": "GitHub · Urchin",
+        "url": "https://github.com/duckyb/urchin"
+      }
+    },
+    {
+      "id": "brain",
+      "name": "Brain",
+      "maker": "Wesztman",
+      "year": "2023",
+      "branch": "wireless",
+      "order": 281,
+      "summary": "A 40-key Urchin derivative that adds a pinky column and one more thumb key per hand, with the pinky column dropped 2 mm for reach.",
+      "delta": "+3 keys per side: pinky column + thumb, 2 mm lower.",
+      "changes": [
+        "40 keys total, up from 34.",
+        "Adds one pinky column with two keys and one extra thumb key per side.",
+        "Existing pinky column lowered 2 mm.",
+        "Choc v1 hotswap, nice!view and wireless-only ZMK build.",
+        "Case and plate compatible with the Urchin ecosystem."
+      ],
+      "tags": [
+        "40k",
+        "wireless",
+        "choc",
+        "stagger",
+        "hotswap",
+        "display"
+      ],
+      "evidence": "Brain README: based on Urchin, it adds '3 extra keys on each side. One extra pinky column with two keys and one extra thumb key.' It also lowers the pinky keys 2 mm.",
+      "source": {
+        "label": "GitHub · Brain",
+        "url": "https://github.com/Wesztman/brain"
+      }
+    },
+    {
+      "id": "smallwave",
+      "name": "smallwave",
+      "maker": "RosenNX6",
+      "year": "2023",
+      "branch": "wireless",
+      "order": 282,
+      "summary": "A 34-key Urchin modification with an e-paper status display. Same compact Sweep layout, more information at a glance.",
+      "delta": "E-paper display + 34-key Urchin base.",
+      "changes": [
+        "Built by modifying the Urchin design.",
+        "34-key Sweep layout retained.",
+        "E-paper style status display; nice!view support.",
+        "Choc v1 hotswap, nice!nano and ZMK.",
+        "Inspired by the Flipper and Corne as well as the Sweep."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "choc",
+        "stagger",
+        "hotswap",
+        "display"
+      ],
+      "evidence": "smallwave README: the design 'ultimately comes from the popular Sweep layout but was built by modifying the Urchin design' and adds an e-paper style display. It is a 34-key wireless ZMK board.",
+      "source": {
+        "label": "GitHub · smallwave",
+        "url": "https://github.com/RosenNX6/smallwave"
+      }
+    },
+    {
+      "id": "lambbt",
+      "name": "LambBT",
+      "maker": "johnlamb",
+      "year": "2023",
+      "branch": "wireless",
+      "order": 290,
+      "summary": "A 34-key wireless Choc board that keeps the Sweep family layout but adds the pronounced column splay of Architeuthis Dux.",
+      "delta": "Architeuthis Dux splay + hotswap + printed case.",
+      "changes": [
+        "34-key Sweep-family layout with Choc v1 switches.",
+        "Column splay matched to Architeuthis Dux.",
+        "Kailh hotswap sockets and a top plate.",
+        "nice!nano v2, ZMK and wireless-only build.",
+        "3D-printed case with M2 heat-set inserts; MCU can face up or down."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "choc",
+        "stagger",
+        "splay",
+        "hotswap"
+      ],
+      "evidence": "LambBT README: 'heavily inspired by the Sweep family and Architeuthis Dux. The columns have the same splay as the AD.' It lists Choc v1, hotswap, nice!nano and ZMK.",
+      "source": {
+        "label": "GitHub · LambBT",
+        "url": "https://github.com/johnlamb/LambBT"
+      }
+    },
+    {
+      "id": "cweep",
+      "name": "cweep",
+      "maker": "cjshearer",
+      "year": "2025",
+      "branch": "wireless",
+      "order": 300,
+      "summary": "A solar-powered 34-key Sweep descendant. Reversible PCB, XIAO nRF52840, Choc hotswap and a small solar cell that trickle-charges the battery.",
+      "delta": "Solar charging + XIAO BLE + reversible PCB.",
+      "changes": [
+        "Solar cell and BQ25504 boost charger per half.",
+        "Seeed XIAO nRF52840 controller, ZMK and Bluetooth.",
+        "Reversible PCB; one design for both hands.",
+        "Choc v1 hotswap sockets and 34-key Sweep layout.",
+        "10440 battery with pogo-pin contacts; low-profile case."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "choc",
+        "stagger",
+        "hotswap",
+        "reversible",
+        "solar"
+      ],
+      "evidence": "cweep README: 'A 34 key split keyboard, inspired by the Ferris Sweep and powered by the sun.' The BOM includes a solar cell, BQ25504 charger, XIAO nRF52840, Choc hotswap sockets and a reversible PCB.",
+      "source": {
+        "label": "GitHub · cweep",
+        "url": "https://github.com/cjshearer/cweep"
+      }
+    },
+    {
+      "id": "splave",
+      "name": "splave-ferris",
+      "maker": "jusdisgi",
+      "year": "2025",
+      "branch": "wireless",
+      "order": 310,
+      "summary": "A very thin 34-key Sweep-like board with a little finger splay, built around a Seeed XIAO BLE and soldered Choc switches.",
+      "delta": "Finger splay + XIAO BLE + soldered slim build.",
+      "changes": [
+        "Sweep-like 34-key layout with added finger splay.",
+        "Seeed XIAO BLE and ZMK for wireless.",
+        "Choc v1 switches, soldered rather than hotswap, to keep the build thin.",
+        "Ergogen-generated layout, designed for SMD assembly.",
+        "More switch types planned, starting with Choc v1."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "choc",
+        "stagger",
+        "splay"
+      ],
+      "evidence": "splave-ferris README: 'Similar in layout to the Ferris Sweep except with a bit of finger splay.' It runs ZMK on a Seeed XIAO BLE and uses soldered Choc v1 switches.",
+      "source": {
+        "label": "GitHub · splave-ferris",
+        "url": "https://github.com/jusdisgi/splave-ferris"
+      }
+    },
+    {
+      "id": "raii",
+      "name": "RAII",
+      "alias": "RAII RP2040",
+      "maker": "unspecworks",
+      "year": "2025",
+      "branch": "remix",
+      "order": 365,
+      "summary": "A wired, splayed Sweep with an integrated RP2040. The ring and pinky columns are angled, the tenting mount is removed, and the switch footprint is hotswap-only with Choc V2 support.",
+      "delta": "Splayed ring/pinky + integrated RP2040 + hotswap-only.",
+      "changes": [
+        "Splay added to the ring and pinky columns.",
+        "Integrated RP2040 controller for a wired build.",
+        "Kailh hotswap sockets only; solder-only switch footprints removed.",
+        "Kailh Choc V2 support added.",
+        "Tenting-puck mount removed; extra BOOTSEL button footprint added.",
+        "Based on waffle87's Sweep, with updated PCB and footprints."
+      ],
+      "tags": [
+        "34k",
+        "wired",
+        "choc",
+        "hotswap",
+        "splay",
+        "stagger"
+      ],
+      "evidence": "RAII README: 'a customized variant of waffle87/sweep featuring splayed columns and various PCB and footprint updates.' Modifications include ring/pinky splay, an integrated RP2040 wired build, hotswap-only sockets, Choc V2 support, and removal of the tenting-puck mount.",
+      "source": {
+        "label": "GitHub · RAII",
+        "url": "https://github.com/unspecworks/raii"
+      }
+    },
+    {
+      "id": "raii-wireless",
+      "name": "RAII Wireless",
+      "maker": "unspecworks",
+      "year": "2026",
+      "branch": "wireless",
+      "order": 221,
+      "summary": "The wireless RAII: a Sweep Bling LP variant with splayed ring and pinky columns, Choc V2 support, and a nice!nano or Pro Micro controller footprint.",
+      "delta": "Ring/pinky splay + Choc V2 + nice!nano/Pro Micro.",
+      "changes": [
+        "Splay added to the ring and pinky columns.",
+        "Based on the Sweep Bling LP rather than the wired RP2040 RAII.",
+        "Kailh Choc V2 support added.",
+        "Compatible with nice!nano v2 or Pro Micro controllers.",
+        "Wireless with ZMK using the Cradio firmware; case files included."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "wired",
+        "choc",
+        "hotswap",
+        "splay",
+        "stagger",
+        "diodeless"
+      ],
+      "evidence": "RAII Wireless README: 'a customized variant of Sweep Bling LP, featuring splayed columns and various PCB and footprint updates.' Modifications include ring/pinky splay, Kailh Choc V2 support, and compatibility with nice!nano v2 or Pro Micro.",
+      "source": {
+        "label": "GitHub · RAII Wireless",
+        "url": "https://github.com/unspecworks/raii-wireless"
+      }
+    },
+    {
+      "id": "sweek",
+      "name": "Sweek",
+      "maker": "earvingad",
+      "year": "2025",
+      "branch": "layout",
+      "order": 320,
+      "summary": "A wired 36-key Ferris/Sweep-inspired board built around RP2040, with encoder and OLED support plus a unusually broad switch compatibility list.",
+      "delta": "36 keys + RP2040 + multi-switch + encoders/OLED.",
+      "changes": [
+        "36 keys instead of 34.",
+        "RP2040 controller and USB-C link between halves.",
+        "Supports MX, Choc v1/v2 and Redragon low-profile switches.",
+        "EC11 encoders and OLED displays.",
+        "Reversible PCB with through-hole diodes; a diodeless version also exists.",
+        "KMK firmware, hence the K in Sweek."
+      ],
+      "tags": [
+        "36k",
+        "wired",
+        "choc",
+        "mx",
+        "multi",
+        "stagger",
+        "display",
+        "encoder",
+        "reversible"
+      ],
+      "evidence": "Sweek README: 'a Ferris/sweep inspired, 36 keys split keyboard.' It features an RP2040, USB-C communication, MX/Choc/Redragon support, encoders, OLEDs, a reversible PCB and a diodeless option.",
+      "source": {
+        "label": "GitHub · Sweek",
+        "url": "https://github.com/earvingad/Sweek"
+      }
+    },
+    {
+      "id": "sweepro",
+      "name": "Sweepro-CE",
+      "maker": "ufan",
+      "year": "2022",
+      "branch": "wireless",
+      "order": 330,
+      "summary": "A 34+2-key wireless Sweep with an e-paper display, two horizontal encoders, a big battery and optional wireless charging. The community edition of a more maximalist Sweep.",
+      "delta": "EPD + dual encoders + 160 mAh + optional wireless charging.",
+      "changes": [
+        "34+2 keys: Sweep layout with adjusted thumb keys.",
+        "Choc v1 hotswap and tight Choc spacing.",
+        "Two horizontal encoders and a 1.02-inch e-paper display.",
+        "nRFMicro/nRF52840, ZMK and Bluetooth.",
+        "160 mAh Li-Po with optional wireless charging.",
+        "Reversible two-in-one PCB; 3D-printed case."
+      ],
+      "tags": [
+        "36k",
+        "wireless",
+        "choc",
+        "stagger",
+        "hotswap",
+        "display",
+        "encoder",
+        "reversible"
+      ],
+      "evidence": "Sweep-Pro CE README lists '34+2 keys, with ferris/sweep layout (thumb keys adjusted)', Choc spacing, Kailh hotswap, two encoders, a 1.02-inch EPD, nRFMicro/ZMK, 160 mAh and a reversible PCB.",
+      "source": {
+        "label": "GitHub · Sweepro-CE",
+        "url": "https://github.com/ufan/sweepro-ce"
+      }
+    },
+    {
+      "id": "sweep-pro",
+      "name": "Sweep Pro",
+      "maker": "nxtkb",
+      "year": "2025",
+      "branch": "wireless",
+      "order": 340,
+      "summary": "A commercial, maximalist 34-key Sweep with an e-ink status screen, Cirque trackpad, dual encoders, huge batteries and magnetic tenting.",
+      "delta": "E-ink + Cirque trackpad + dual encoders + 4000 mAh.",
+      "changes": [
+        "34-key Ferris Sweep variant in a low-profile case.",
+        "1.54-inch e-ink display for layers, battery and split status.",
+        "Cirque GlidePoint trackpad with gesture support.",
+        "Dual clickable rotary encoders.",
+        "4000 mAh total battery capacity and magnetic tenting.",
+        "ZMK Studio, USB-C and Bluetooth dual-mode."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "wired",
+        "choc",
+        "stagger",
+        "display",
+        "encoder",
+        "trackpad"
+      ],
+      "evidence": "Sweep Pro README describes a 34-key 'Ferris Sweep Variant' with a 1.54-inch e-ink display, Cirque trackpad, dual encoders, 4000 mAh total capacity and ZMK Studio.",
+      "source": {
+        "label": "GitHub · Sweep Pro",
+        "url": "https://github.com/nxtkb/Sweep-Pro"
+      }
+    },
+    {
+      "id": "ferricy",
+      "name": "Ferricy",
+      "maker": "icyphox",
+      "year": "2022",
+      "branch": "remix",
+      "order": 350,
+      "summary": "A squared-off, industrial-looking Sweep. Choc builds follow Half-Swept; MX builds follow Sweep Bling MX. Tenting support is removed.",
+      "delta": "Industrial squared outline + no tenting + bigger standoffs.",
+      "changes": [
+        "Squared-off PCB and plate edges replace the Sweep outline.",
+        "Choc version based on Sweep Half-Swept; MX version based on Sweep Bling MX.",
+        "Tenting-puck support removed.",
+        "Larger PCB holes for M2 standoffs.",
+        "The Rust crab silkscreen is removed."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "wired",
+        "choc",
+        "mx",
+        "stagger",
+        "hotswap"
+      ],
+      "evidence": "Ferricy README: 'A 34-key split keyboard based on the Sweep.' It is 'Ferricy MX based on the Sweep MX Bling' and 'Ferricy Choc based on the Sweep Half-Swept', with squared edges and no tenting puck.",
+      "source": {
+        "label": "GitHub · Ferricy",
+        "url": "https://github.com/icyphox/ferricy"
+      }
+    },
+    {
+      "id": "tweaked",
+      "name": "Tweaked Sweep",
+      "maker": "Ben Vallack",
+      "year": "2021",
+      "branch": "remix",
+      "order": 360,
+      "summary": "A cosmetic and mechanical remix of Sweep Compact: tighter edge cut and a spider-web silkscreen, with the same electronics and layout.",
+      "delta": "Tighter edge cut + spider-web art; no functional change.",
+      "changes": [
+        "Based on the archived Sweep Compact.",
+        "Tightened edge cut around the keys and controller.",
+        "Spider-web silkscreen artwork.",
+        "Same 34-key layout and electronics.",
+        "Build video documents the customization process."
+      ],
+      "tags": [
+        "34k",
+        "wireless",
+        "wired",
+        "choc",
+        "stagger",
+        "diodeless"
+      ],
+      "evidence": "Tweaked Sweep README: 'A custom version of the Ferris Sweep' with a 'tightenend up edge cut and spider web silkscreen', based on the Sweep Compact.",
+      "source": {
+        "label": "GitHub · Ferris-Sweep-Tweaked",
+        "url": "https://github.com/benvallack/Ferris-Sweep-Tweaked"
+      }
+    },
+    {
+      "id": "swulp",
+      "name": "Swulp",
+      "maker": "ThePurox",
+      "year": "2025",
+      "branch": "remix",
+      "order": 370,
+      "summary": "A Sweep remix for Cherry Ultra Low Profile switches, keeping the familiar 34-key shape but swapping the switch footprint.",
+      "delta": "Cherry Ultra Low Profile switch footprint.",
+      "changes": [
+        "Cherry ULP switches instead of Choc or MX.",
+        "34-key Sweep layout and Choc spacing.",
+        "Lowest-profile branch of the Sweep family.",
+        "PCB and plate files for a custom build."
+      ],
+      "tags": [
+        "34k",
+        "ulp",
+        "stagger"
+      ],
+      "evidence": "Swulp repository description: 'a Cherry ultra low profile version of the Sweep keyboard inturn inspired by the Ferris.' The repo adapts the Sweep design to Cherry ULP switches.",
+      "source": {
+        "label": "GitHub · Swulp",
+        "url": "https://github.com/ThePurox/Swulp"
+      }
+    },
+    {
+      "id": "keebwird",
+      "name": "keebwird",
+      "maker": "howird",
+      "year": "2021",
+      "branch": "layout",
+      "order": 380,
+      "summary": "A unibody take on the Sweep: both halves live on one PCB with a single Pro Micro, making it wired and simpler to build but no longer split.",
+      "delta": "Unibody + single controller + wired.",
+      "changes": [
+        "Both halves combined into one PCB.",
+        "Single Pro Micro instead of two controllers.",
+        "Wired USB connection; no TRRS or wireless.",
+        "34-key low-profile Choc build with diodes.",
+        "Based on the Ferris Sweep v2 layout."
+      ],
+      "tags": [
+        "34k",
+        "wired",
+        "choc",
+        "stagger",
+        "unibody"
+      ],
+      "evidence": "keebwird README: 'low-profile, column-staggered, unibody, 34 key mechanical keyboard based on the ferris sweep'. The BOM lists one Arduino Pro Micro and 34 Choc switches.",
+      "source": {
+        "label": "GitHub · keebwird",
+        "url": "https://github.com/howird/keebwird"
+      }
+    }
+  ],
+  "links": [
+    {
+      "from": "ferris-01",
+      "to": "ferris-02",
+      "type": "variant",
+      "label": "ARM MCU + ESD + Bling",
+      "primary": true
+    },
+    {
+      "from": "ferris-01",
+      "to": "sweep",
+      "type": "fork",
+      "label": "Daughterboard + wireless",
+      "primary": true
+    },
+    {
+      "from": "ferris-01",
+      "to": "cantor",
+      "type": "inspired",
+      "label": "42 keys + Corne blend",
+      "primary": true
+    },
+    {
+      "from": "ferris-01",
+      "to": "eobard",
+      "type": "inspired",
+      "label": "Ortholinear 34",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "sweep-2",
+      "type": "variant",
+      "label": "Refined Choc daily driver",
+      "primary": true
+    },
+    {
+      "from": "sweep-2",
+      "to": "half-swept",
+      "type": "variant",
+      "label": "Reversible footprint",
+      "primary": true
+    },
+    {
+      "from": "sweep-2",
+      "to": "sweep-cat",
+      "type": "fork",
+      "label": "30 keys + splay",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "bling-lp",
+      "type": "variant",
+      "label": "Choc + hotswap",
+      "primary": true
+    },
+    {
+      "from": "bling-lp",
+      "to": "raii-wireless",
+      "type": "variant",
+      "label": "Splay + Choc V2",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "bling-mx",
+      "type": "variant",
+      "label": "MX + hotswap",
+      "primary": true
+    },
+    {
+      "from": "bling-mx",
+      "to": "aurora-sweep",
+      "type": "fork",
+      "label": "Commercial RGB + OLED",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "high",
+      "type": "variant",
+      "label": "MX spacing + multi-switch",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "high-m",
+      "type": "variant",
+      "label": "Soldered MX + reversible",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "mini",
+      "type": "variant",
+      "label": "Choc mini",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "swoop",
+      "type": "fork",
+      "label": "MX + RGB + encoders",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "swweeep",
+      "type": "fork",
+      "label": "36 keys + wireless-only",
+      "primary": true
+    },
+    {
+      "from": "swweeep",
+      "to": "sweep-squared-rot",
+      "type": "inspired",
+      "label": "Rotated + 100 mm PCB",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "urchin",
+      "type": "fork",
+      "label": "Wireless-only + nice!view",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "lambbt",
+      "type": "inspired",
+      "label": "Dux splay + case",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "cweep",
+      "type": "inspired",
+      "label": "Solar + XIAO",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "splave",
+      "type": "inspired",
+      "label": "Splay + XIAO",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "sweek",
+      "type": "inspired",
+      "label": "36 keys + RP2040",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "sweepro",
+      "type": "inspired",
+      "label": "EPD + dual encoders",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "sweep-pro",
+      "type": "inspired",
+      "label": "E-ink + trackpad",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "ferricy",
+      "type": "fork",
+      "label": "Squared industrial outline",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "tweaked",
+      "type": "fork",
+      "label": "Tight edge cut + art",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "raii",
+      "type": "fork",
+      "label": "Splayed + wired RP2040",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "swulp",
+      "type": "fork",
+      "label": "Cherry ULP",
+      "primary": true
+    },
+    {
+      "from": "sweep",
+      "to": "keebwird",
+      "type": "fork",
+      "label": "Unibody + wired",
+      "primary": true
+    },
+    {
+      "from": "urchin",
+      "to": "brain",
+      "type": "fork",
+      "label": "+3 keys per side",
+      "primary": true
+    },
+    {
+      "from": "urchin",
+      "to": "smallwave",
+      "type": "fork",
+      "label": "E-paper + 34 keys",
+      "primary": true
+    },
+    {
+      "from": "swoop",
+      "to": "urchin",
+      "type": "reuse",
+      "label": "Swoop edge cut reused",
+      "primary": false
+    },
+    {
+      "from": "raii",
+      "to": "raii-wireless",
+      "type": "reuse",
+      "label": "Same splay geometry",
+      "primary": false
+    }
+  ]
+}

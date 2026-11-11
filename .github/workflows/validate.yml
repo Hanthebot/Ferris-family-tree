@@ -1,0 +1,29 @@
+name: Validate data
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate JSON and generated mirror
+        run: node scripts/validate-data.mjs
+
+      - name: Check that the site files exist
+        run: |
+          test -f index.html
+          test -f styles.css
+          test -f app.js
+          test -f data/family-tree.json
+          test -f data/family-tree.js
